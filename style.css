@@ -44,15 +44,22 @@ button {
   border-style: solid;
   border-width: 1px 1px 3px 1px;
   border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: var(--clr-shadow) 0px 6px 14px -5px;
+  transition: background-color 0.1s ease, border-color 0.1s ease;
+}
+button:hover {
+  border-color: rgba(0, 0, 0, 0.05);
 }
 button.ios {
   background-color: var(--clr-strong-cyan);
+  --clr-shadow: var(--clr-hov-cyan);
 }
 button.ios:hover {
   background-color: var(--clr-hov-cyan);
 }
 button.mac {
   background-color: var(--clr-light-blue);
+  --clr-shadow: var(--clr-light-blue);
 }
 button.mac:hover {
   background-color: var(--clr-hov-blue);
