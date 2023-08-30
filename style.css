@@ -26,19 +26,28 @@ body {
   min-height: 100vh;
 }
 
+main::selection {
+  background-color: var(--clr-light-blue);
+  color: white;
+}
+
 h1,
 h2,
 h3 {
   font-weight: 600;
   color: var(--clr-dark-grey);
+  &::selection {
+    color: white;
+    background-color: var(--clr-strong-cyan);
+  }
 }
 
 button {
-  cursor: pointer;
   font-family: inherit;
   font-size: inherit;
   font-weight: 600;
   color: white;
+
   padding: 1rem 2rem;
   border-radius: 2rem;
   border-style: solid;
@@ -46,33 +55,40 @@ button {
   border-color: rgba(0, 0, 0, 0.1);
   box-shadow: var(--clr-shadow) 0px 6px 14px -5px;
   transition: background-color 0.1s ease, border-color 0.1s ease;
-}
-button:hover {
-  border-color: rgba(0, 0, 0, 0.05);
-}
-button.ios {
-  background-color: var(--clr-strong-cyan);
-  --clr-shadow: var(--clr-hov-cyan);
-}
-button.ios:hover {
-  background-color: var(--clr-hov-cyan);
-}
-button.mac {
-  background-color: var(--clr-light-blue);
-  --clr-shadow: var(--clr-light-blue);
-}
-button.mac:hover {
-  background-color: var(--clr-hov-blue);
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+  &.ios {
+    background-color: var(--clr-strong-cyan);
+    --clr-shadow: var(--clr-hov-cyan);
+    &:hover {
+      background-color: var(--clr-hov-cyan);
+    }
+  }
+  &.mac {
+    background-color: var(--clr-light-blue);
+    --clr-shadow: var(--clr-light-blue);
+    &:hover {
+      background-color: var(--clr-hov-blue);
+    }
+  }
 }
 
 footer {
   padding: 2rem;
   background-color: #f5f6f8;
-}
-footer a {
-  color: var(--clr-dark-grey);
-  text-decoration: none;
-}
-footer a:hover {
-  color: var(--clr-strong-cyan);
+  user-select: none;
+
+  & a {
+    text-decoration: none;
+    color: var(--clr-dark-grey);
+
+    transition: color 0.1s ease;
+    &:hover {
+      color: var(--clr-strong-cyan);
+    }
+  }
 }
